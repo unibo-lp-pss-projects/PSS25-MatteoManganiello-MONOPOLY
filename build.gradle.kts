@@ -1,9 +1,15 @@
+
 plugins {
     // Compilazione dei sorgenti Java e task di test.
     java
     // Aggiunge il task "run" e la creazione delle distribuzioni eseguibili.
     application
+
+    id("org.danilopianini.unibo-oop-gradle-plugin") version "2.0.39"
 }
+
+java { toolchain { languageVersion.set(JavaLanguageVersion.of(25)) } }
+
 
 group = "it.unibo"
 version = "1.0.0"
