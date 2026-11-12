@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: DanySK/action-checkout@0.2.31
-      - uses: paulhatch/semantic-version@v6.0.4
+      - uses: paulhatch/semantic-version@v6.0.7
         id: version
         with:
           tag_prefix: ""
@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-2025, macos-15, ubuntu-24.04 ]
+        os: [ windows-2025, macos-26, ubuntu-26.04 ]
     runs-on: ${{ matrix.os }}
     needs:
       - version
@@ -64,7 +64,7 @@ jobs:
         shell: bash
         run: |
           bash <(curl -s https://raw.githubusercontent.com/git-quick-stats/git-quick-stats/${{ steps.versions.outputs.git-quick-stats }}/git-quick-stats) -T > git-stats.txt
-      - uses: DanySK/build-check-deploy-gradle-action@4.0.48
+      - uses: DanySK/build-check-deploy-gradle-action@4.0.51
         with:
           build-command: ./gradlew blame
           check-command: ./gradlew test blame || true
@@ -93,7 +93,7 @@ jobs:
         shell: bash
         run: |
           USES=$(cat <<TRICK_RENOVATE
-          - uses: DanySK/code-plagiarism-detector@12.1.3
+          - uses: DanySK/code-plagiarism-detector@12.1.4
           TRICK_RENOVATE
           )
           echo "Scripts update line: \"$USES\""

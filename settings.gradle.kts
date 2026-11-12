@@ -1,6 +1,6 @@
 rootProject.name = "pss-25-MONOPOLY"
 plugins {
-    id("com.gradle.develocity") version "4.6.0"
+    id("com.gradle.develocity") version "4.6.1"
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 

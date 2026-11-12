@@ -5,7 +5,7 @@ plugins {
     // Aggiunge il task "run" e la creazione delle distribuzioni eseguibili.
     application
 
-    id("org.danilopianini.unibo-oop-gradle-plugin") version "2.0.39"
+    id("org.danilopianini.unibo-oop-gradle-plugin") version "2.0.46"
 }
 
 java { toolchain { languageVersion.set(JavaLanguageVersion.of(25)) } }
